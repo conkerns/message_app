@@ -1,5 +1,17 @@
 # Readme
 
+## Setup
+
+The application was compiled and tested in Java 8 (1.8.0_181). The app uses Maven as a dependency manager.
+
+## Modules
+The main pom file is used to group modules that make up the application as a whole and provide unified dependency management and versioning for all of them.
+- app - contains the entry class for the whole application in the form of the main method. It unifies other modules to create the application and builds the runnable jar
+- domain - contains domain model class(es) and interfaces to connect the web layer with the service layer
+- persistence - contains the entity model classes and database repositories
+- service - contains the business logic layer, mapping and validation
+- web - contains the web endpoints definitions, top level error handling and request/response model classes
+
 ## API
 
 The application exposes 6 endpoints. When the application is running they can be explored via the swagger page available at `http://localhost:9000/posting-service/swagger-ui.html`. All the endpoints should be prefixed with `http://localhost:9000/posting-service`.
@@ -33,12 +45,12 @@ Returns **all** the posts submitted by the user provided in `username` in revers
 ~~~~
 [
   {
-    "username": "adrian",
+    "username": "someUser",
     "content": "tweeeeeet 2",
     "createdDate": "2018-10-21T15:38:36.878"
   },
   {
-    "username": "adrian",
+    "username": "someUser",
     "content": "tweeeeeet 1",
     "createdDate": "2018-10-21T12:33:32.012"
   }
